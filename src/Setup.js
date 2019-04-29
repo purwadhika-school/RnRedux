@@ -13,8 +13,7 @@ import {
 } from 'react-native'
 import { connect } from 'react-redux'
 import { fetchData } from './actions'
-
-
+import Profile from '../src/components/Profile'
 
 class Setup extends Component {
   componentDidMount(){
@@ -24,10 +23,15 @@ class Setup extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        {
-          this.props.data ? (<Text>{this.props.data}</Text>) : (<ActivityIndicator size='large' />)
-        }
+      <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: 'blue' }}>
+          {
+            this.props.data ? (<Text>{this.props.data}</Text>) : (<ActivityIndicator size='large' />)
+          }
+        </View>
+        <View style={{ flex: 1, backgroundColor: 'red' }}>
+          <Profile />
+        </View>
       </View>
     );
   }
